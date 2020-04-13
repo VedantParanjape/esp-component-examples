@@ -1,4 +1,4 @@
-WiFi Logger Examples
+PID Plotter examples
 ======================
 
 Example app for ESP-IDF Component ![pid-plotter](https://github.com/VedantParanjape/pid-plotter-component)
@@ -10,7 +10,7 @@ idf.py menuconfig
 idf.py flash
 ```
 
-![](https://raw.githubusercontent.com/VedantParanjape/esp-component-examples/master/assets/esp_wifi_logger_edited.gif)
+![](https://github.com/VedantParanjape/esp-component-examples/raw/master/assets/pid_plotter_example_edited.gif)
 
 ## Usage
 
