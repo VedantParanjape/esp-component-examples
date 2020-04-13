@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := udp_transmit
+PROJECT_NAME := pid-plotter-example
 
 include $(IDF_PATH)/make/project.mk
 

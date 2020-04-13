@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := esp-wifi-logger
+PROJECT_NAME := esp-wifi-logger-example
 
 include $(IDF_PATH)/make/project.mk
 
