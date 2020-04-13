@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="plotter_8c" kind="file" language="C++">
+    <compoundname>plotter.c</compoundname>
+    <includes refid="plotter_8h" local="yes">plotter.h</includes>
+    <incdepgraph>
+      <node id="166">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="173">
+        <label>nvs_flash.h</label>
+      </node>
+      <node id="175">
+        <label>protocol_examples_common.h</label>
+      </node>
+      <node id="183">
+        <label>stdlib.h</label>
+      </node>
+      <node id="181">
+        <label>tcp_handler.h</label>
+        <link refid="tcp__handler_8h"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>esp_system.h</label>
+      </node>
+      <node id="186">
+        <label>esp_err.h</label>
+      </node>
+      <node id="174">
+        <label>esp_netif.h</label>
+      </node>
+      <node id="184">
+        <label>freertos/queue.h</label>
+      </node>
+      <node id="170">
+        <label>esp_wifi.h</label>
+      </node>
+      <node id="161">
+        <label>cJSON.h</label>
+      </node>
+      <node id="158">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/plotter.c</label>
+        <link refid="plotter_8c"/>
+        <childnode refid="159" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>lwip/netdb.h</label>
+      </node>
+      <node id="164">
+        <label>string.h</label>
+      </node>
+      <node id="172">
+        <label>esp_log.h</label>
+      </node>
+      <node id="165">
+        <label>sys/param.h</label>
+      </node>
+      <node id="178">
+        <label>lwip/sockets.h</label>
+      </node>
+      <node id="179">
+        <label>lwip/sys.h</label>
+      </node>
+      <node id="185">
+        <label>freertos/semphr.h</label>
+      </node>
+      <node id="177">
+        <label>lwip/err.h</label>
+      </node>
+      <node id="171">
+        <label>esp_event.h</label>
+      </node>
+      <node id="167">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="160">
+        <label>json_handler.h</label>
+        <link refid="json__handler_8h"/>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>udp_handler.h</label>
+        <link refid="udp__handler_8h"/>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>plotter.h</label>
+        <link refid="plotter_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>stdio.h</label>
+      </node>
+      <node id="168">
+        <label>freertos/event_groups.h</label>
+      </node>
+      <node id="176">
+        <label>logger.h</label>
+      </node>
+      <node id="182">
+        <label>transport.h</label>
+        <link refid="transport_8h"/>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="185" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="plotter_8c_1acc8c0bc33035955e5c765b474fb33ef1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void plotter</definition>
+        <argsstring>()</argsstring>
+        <name>plotter</name>
+        <briefdescription>
+<para>Wrapper function to run the plotter functionality on a separate core. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/plotter.c" line="7" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/plotter.c" bodystart="7" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="plotter_8h" kindref="compound">plotter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="plotter_8c_1acc8c0bc33035955e5c765b474fb33ef1" kindref="member">plotter</ref>()</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP_ERROR_CHECK(<ref refid="transport_8h_1a320afeaba56579760e7e3185a3d1fa02" kindref="member">init_queue</ref>());</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="transport_8h_1a6afdab1f1ab02c6ed620949a7d32ffa4" kindref="member">init_transport</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreatePinnedToCore(<ref refid="transport_8h_1acaba133d8c5e0cbadc4cfff68feca9fc" kindref="member">pid_const_transport</ref>,<sp/></highlight><highlight class="stringliteral">&quot;tcp_pid_receive&quot;</highlight><highlight class="normal">,<sp/>4096,<sp/>NULL,<sp/>1,<sp/>&amp;<ref refid="transport_8h_1af69ee3a89d006744edbe8e3039c6210d" kindref="member">pid_const_transport_handle</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreatePinnedToCore(<ref refid="transport_8h_1a56e72500cb37fcbc087c3c3125ab7f8e" kindref="member">pid_transport</ref>,<sp/></highlight><highlight class="stringliteral">&quot;udp_pid_send&quot;</highlight><highlight class="normal">,<sp/>4096,<sp/>NULL,<sp/>2,<sp/>&amp;<ref refid="transport_8h_1afd5531c3e8b14bff72ce2bb5d9e37afb" kindref="member">pid_transport_handle</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/plotter.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>PID-Plotter</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>ESP-IDF<sp/>component<sp/>for<sp/>[pid-tuning-gui](https://github.com/VedantParanjape/pid-tuning-gui).<sp/>This<sp/>transports<sp/>data,<sp/>between<sp/>the<sp/>plotter<sp/>and<sp/>esp<sp/>device.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Requirements</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>[logger](https://github.com/VedantParanjape/logger)<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>&lt;your_esp_idf_project&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>components</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>components</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>https://github.com/VedantParanjape/logger<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>https://github.com/VedantParanjape/pid-plotter-component<sp/>pid_plotter</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Change<sp/>CMakeList.txt<sp/>to<sp/>add<sp/>the<sp/>line<sp/>given<sp/>below:*<sp/><sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>set(EXTRA_COMPONENT_DIRS<sp/>&lt;path_to_component_folder&gt;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>How<sp/>to<sp/>use</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Set<sp/>UDP<sp/>and<sp/>TCP<sp/>server<sp/>IP<sp/>address<sp/>and<sp/>port<sp/>in<sp/>menuconfig,<sp/>under<sp/>component<sp/>config</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Set<sp/>wifi<sp/>ssid<sp/>and<sp/>password<sp/>to<sp/>use.<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>include<sp/>&quot;pid_plotter.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`plotter()`<sp/>must<sp/>be<sp/>called<sp/>in<sp/>app_main<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`send_to_queue(pid_data_struct)`<sp/>must<sp/>be<sp/>used<sp/>to<sp/>push<sp/>pid_data<sp/>struct<sp/>to<sp/>the<sp/>message<sp/>queue,<sp/>by<sp/>passing<sp/>such<sp/>a<sp/>struct<sp/>to<sp/>this<sp/>function,<sp/>this<sp/>data<sp/>will<sp/>be<sp/>sent<sp/>to<sp/>client<sp/>for<sp/>plotting.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`pid_const_read()`<sp/>returns<sp/>the<sp/>pid_const<sp/>struct<sp/>received<sp/>from<sp/>user.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Working</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>PID<sp/>Constants<sp/>(Kp,<sp/>Ki,<sp/>Kd,<sp/>and<sp/>setpoint)<sp/>are<sp/>received<sp/>by<sp/>esp32,<sp/>by<sp/>connecting<sp/>to<sp/>a<sp/>tcp<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>TCP<sp/>server<sp/>should<sp/>send<sp/>the<sp/>values<sp/>as<sp/>a<sp/>json<sp/>string.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Kp&quot;<sp/>:<sp/>1.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Ki&quot;<sp/>:<sp/>2.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Kd&quot;<sp/>:<sp/>3.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;SetPoint&quot;<sp/>:<sp/>4.0</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">PID<sp/>constants<sp/>json<sp/>format</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Calculated<sp/>PID<sp/>values<sp/>(P,<sp/>I,<sp/>D,<sp/>current,<sp/>error)<sp/>are<sp/>sent<sp/>by<sp/>esp32<sp/>through<sp/>udp,<sp/>sent<sp/>to<sp/>a<sp/>udp<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Values<sp/>are<sp/>sent<sp/>as<sp/>a<sp/>json<sp/>string<sp/>through<sp/>UDP.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;P&quot;<sp/>:<sp/>1.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;I&quot;<sp/>:<sp/>2.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;D&quot;<sp/>:<sp/>3.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;current&quot;<sp/>:<sp/>4.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;error&quot;<sp/>:<sp/>5.0</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">PID<sp/>data<sp/>json<sp/>format</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Example<sp/>Code</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```C</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;pid_plotter.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>broad()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct<sp/>pid_terms<sp/>dt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.current<sp/>=<sp/>1.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.error<sp/>=<sp/>2.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.P<sp/>=<sp/>3.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.I<sp/>=<sp/>4.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.D<sp/>=<sp/>5.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while(1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>esp_err_t<sp/>err<sp/>=<sp/>send_to_queue(dt);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/>send_to_queue(dt);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logD(&quot;main&quot;,<sp/>&quot;%f&quot;,<sp/>pid_const_read().setpoint);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vTaskDelay(10);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>app_main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreate(broad,<sp/>&quot;send&quot;,<sp/>4096,<sp/>NULL,<sp/>1,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>plotter();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Detailed<sp/>documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>https://vedantparanjape.github.io/pid-plotter-component/<sp/></highlight></codeline>
+    </programlisting>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/README.md"/>
+  </compounddef>
+</doxygen>

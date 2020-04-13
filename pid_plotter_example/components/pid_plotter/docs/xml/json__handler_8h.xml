@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="json__handler_8h" kind="file" language="C++">
+    <compoundname>json_handler.h</compoundname>
+    <includes local="yes">cJSON.h</includes>
+    <includes local="yes">stdio.h</includes>
+    <includedby refid="pid__plotter_8h" local="yes">/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/pid_plotter.h</includedby>
+    <includedby refid="transport_8h" local="yes">/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h</includedby>
+    <includedby refid="plotter_8h" local="yes">/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/plotter.h</includedby>
+    <includedby refid="json__handler_8c" local="yes">/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/json_handler.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>cJSON.h</label>
+      </node>
+      <node id="0">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h</label>
+        <link refid="json__handler_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/transport.c</label>
+        <link refid="transport_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/plotter.c</label>
+        <link refid="plotter_8c"/>
+      </node>
+      <node id="4">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/pid_plotter.h</label>
+        <link refid="pid__plotter_8h"/>
+      </node>
+      <node id="9">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/json_handler.c</label>
+        <link refid="json__handler_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h</label>
+        <link refid="json__handler_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/plotter.h</label>
+        <link refid="plotter_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h</label>
+        <link refid="transport_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structpid__const" prot="public">pid_const</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="json__handler_8h_1a229aa3d7fb017d31499a5e29b78b7f08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* create_pid_data_to_json</definition>
+        <argsstring>(float current, float error, float P, float I, float D)</argsstring>
+        <name>create_pid_data_to_json</name>
+        <param>
+          <type>float</type>
+          <declname>current</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>D</declname>
+        </param>
+        <briefdescription>
+<para>Converts PID data to a json string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error value, deviation of current from setpoint </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of Proportional Gain (P) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of Integral Gain (I) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>D</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of Derivative Gain (D) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>char* - Json string of the data sent through parameters. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="38" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/json_handler.c" bodystart="13" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="json__handler_8h_1a5a00fbe2cfe762fae40bd73932ddb072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structpid__const" kindref="compound">pid_const</ref></type>
+        <definition>struct pid_const read_pid_data_from_json</definition>
+        <argsstring>(const char *data)</argsstring>
+        <name>read_pid_data_from_json</name>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Reads PID constant data from a json formatted string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to char array containging the json formatted string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>struct <ref refid="structpid__const" kindref="compound">pid_const</ref> - Returns a array of PID constants, extracted from the json string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="38" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/json_handler.c" bodystart="36" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>JSON<sp/>STRUCTURE</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment">Json<sp/>with<sp/>PID<sp/>data<sp/>to<sp/>be<sp/>sent<sp/>to<sp/>client</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;current&quot;<sp/>:<sp/>current,</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;error&quot;<sp/>:<sp/>error,</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;P&quot;<sp/>:<sp/>P,</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;I&quot;<sp/>:<sp/>I,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;D&quot;<sp/>:<sp/>D</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">Json<sp/>with<sp/>Kp,ki,kd<sp/>and<sp/>setpoint<sp/>data<sp/>to<sp/>be<sp/>recieved</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;kp&quot;<sp/>:<sp/>kp,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;ki&quot;<sp/>:<sp/>ki,</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;kd&quot;<sp/>:<sp/>kd,</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>&quot;setpoint&quot;<sp/>:<sp/>setpoint</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>JSON_HANDLER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JSON_HANDLER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cJSON.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdio.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structpid__const" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structpid__const" kindref="compound">pid_const</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32" refid="structpid__const_1a5ae3ec87567130989aa8dd833718c16a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structpid__const_1a5ae3ec87567130989aa8dd833718c16a" kindref="member">kp</ref>;</highlight></codeline>
+<codeline lineno="33" refid="structpid__const_1a29e400ad2fbe11cc68925c837956c1ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structpid__const_1a29e400ad2fbe11cc68925c837956c1ab" kindref="member">ki</ref>;</highlight></codeline>
+<codeline lineno="34" refid="structpid__const_1a5e6af6c51f63c03fe0fdf7705497e234" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structpid__const_1a5e6af6c51f63c03fe0fdf7705497e234" kindref="member">kd</ref>;</highlight></codeline>
+<codeline lineno="35" refid="structpid__const_1a19b1118c03f705f3b693216e8f22d98a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structpid__const_1a19b1118c03f705f3b693216e8f22d98a" kindref="member">setpoint</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="json__handler_8h_1a229aa3d7fb017d31499a5e29b78b7f08" kindref="member">create_pid_data_to_json</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>current,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>error,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>P,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>I,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>D);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structpid__const" kindref="compound">pid_const</ref><sp/><ref refid="json__handler_8h_1a5a00fbe2cfe762fae40bd73932ddb072" kindref="member">read_pid_data_from_json</ref>(const<sp/>char*<sp/>data);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h"/>
+  </compounddef>
+</doxygen>

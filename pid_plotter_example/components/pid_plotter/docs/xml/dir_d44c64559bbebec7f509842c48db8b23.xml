@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include</compoundname>
+    <innerfile refid="json__handler_8h">json_handler.h</innerfile>
+    <innerfile refid="pid__plotter_8h">pid_plotter.h</innerfile>
+    <innerfile refid="plotter_8h">plotter.h</innerfile>
+    <innerfile refid="tcp__handler_8h">tcp_handler.h</innerfile>
+    <innerfile refid="transport_8h">transport.h</innerfile>
+    <innerfile refid="udp__handler_8h">udp_handler.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/"/>
+  </compounddef>
+</doxygen>

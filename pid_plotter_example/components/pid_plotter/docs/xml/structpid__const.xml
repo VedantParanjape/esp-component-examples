@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structpid__const" kind="struct" language="C++" prot="public">
+    <compoundname>pid_const</compoundname>
+    <includes refid="json__handler_8h" local="no">json_handler.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpid__const_1a5ae3ec87567130989aa8dd833718c16a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_const::kp</definition>
+        <argsstring></argsstring>
+        <name>kp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="32" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__const_1a29e400ad2fbe11cc68925c837956c1ab" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_const::ki</definition>
+        <argsstring></argsstring>
+        <name>ki</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="33" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__const_1a5e6af6c51f63c03fe0fdf7705497e234" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_const::kd</definition>
+        <argsstring></argsstring>
+        <name>kd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="34" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__const_1a19b1118c03f705f3b693216e8f22d98a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_const::setpoint</definition>
+        <argsstring></argsstring>
+        <name>setpoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="35" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" line="31" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/json_handler.h" bodystart="30" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structpid__const_1a5e6af6c51f63c03fe0fdf7705497e234" prot="public" virt="non-virtual"><scope>pid_const</scope><name>kd</name></member>
+      <member refid="structpid__const_1a29e400ad2fbe11cc68925c837956c1ab" prot="public" virt="non-virtual"><scope>pid_const</scope><name>ki</name></member>
+      <member refid="structpid__const_1a5ae3ec87567130989aa8dd833718c16a" prot="public" virt="non-virtual"><scope>pid_const</scope><name>kp</name></member>
+      <member refid="structpid__const_1a19b1118c03f705f3b693216e8f22d98a" prot="public" virt="non-virtual"><scope>pid_const</scope><name>setpoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

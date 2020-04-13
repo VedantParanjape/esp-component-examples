@@ -1,0 +1,117 @@
+\hypertarget{transport_8c}{}\section{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/transport.c File Reference}
+\label{transport_8c}\index{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/transport.\+c@{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/transport.\+c}}
+{\ttfamily \#include \char`\"{}transport.\+h\char`\"{}}\newline
+Include dependency graph for transport.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transport_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \hyperlink{transport_8c_a320afeaba56579760e7e3185a3d1fa02}{init\+\_\+queue} (void)
+\begin{DoxyCompactList}\small\item\em Initialises message queue. \end{DoxyCompactList}\item 
+void \hyperlink{transport_8c_a6afdab1f1ab02c6ed620949a7d32ffa4}{init\+\_\+transport} (void)
+\begin{DoxyCompactList}\small\item\em Initialises transport, i.\+e. connect to wifi. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{transport_8c_a3d23daa4cae5ba60d838c8a2b785462e}{send\+\_\+to\+\_\+queue} (struct \hyperlink{structpid__terms}{pid\+\_\+terms} pid\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Sends pid\+\_\+data struct to message queue. \end{DoxyCompactList}\item 
+struct \hyperlink{structdata__recv}{data\+\_\+recv} \hyperlink{transport_8c_a3f717da7b4c254e710bbfd76625b15e4}{receive\+\_\+from\+\_\+queue} (void)
+\begin{DoxyCompactList}\small\item\em Receive data from queue. \end{DoxyCompactList}\item 
+void \hyperlink{transport_8c_a56e72500cb37fcbc087c3c3125ab7f8e}{pid\+\_\+transport} ()
+\begin{DoxyCompactList}\small\item\em Handles U\+DP client, which sends \hyperlink{structpid__terms}{pid\+\_\+terms} received through message queue. \end{DoxyCompactList}\item 
+void \hyperlink{transport_8c_acaba133d8c5e0cbadc4cfff68feca9fc}{pid\+\_\+const\+\_\+transport} ()
+\begin{DoxyCompactList}\small\item\em Handles T\+CP client, which receives pid\+\_\+constants from server, and parses the data and stores it in a global struct pid\+\_\+const\+\_\+data. \end{DoxyCompactList}\item 
+struct \hyperlink{structpid__const}{pid\+\_\+const} \hyperlink{transport_8c_aa37b5765ca807a54890c516c916e7e9b}{pid\+\_\+const\+\_\+read} ()
+\begin{DoxyCompactList}\small\item\em Returns pid\+\_\+const\+\_\+data struct. Checks if the resource is blocked by mutex for writing or it is accessible, waits till pid\+\_\+const\+\_\+data is accessible and returns it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{transport_8c_a320afeaba56579760e7e3185a3d1fa02}\label{transport_8c_a320afeaba56579760e7e3185a3d1fa02}} 
+\index{transport.\+c@{transport.\+c}!init\+\_\+queue@{init\+\_\+queue}}
+\index{init\+\_\+queue@{init\+\_\+queue}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{init\+\_\+queue()}{init\_queue()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t init\+\_\+queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises message queue. 
+
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t E\+S\+P\+\_\+\+OK -\/ if queue init sucessfully, E\+S\+P\+\_\+\+F\+A\+IL -\/ if queue init failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transport_8c_a6afdab1f1ab02c6ed620949a7d32ffa4}\label{transport_8c_a6afdab1f1ab02c6ed620949a7d32ffa4}} 
+\index{transport.\+c@{transport.\+c}!init\+\_\+transport@{init\+\_\+transport}}
+\index{init\+\_\+transport@{init\+\_\+transport}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{init\+\_\+transport()}{init\_transport()}}
+{\footnotesize\ttfamily void init\+\_\+transport (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises transport, i.\+e. connect to wifi. 
+
+\mbox{\Hypertarget{transport_8c_aa37b5765ca807a54890c516c916e7e9b}\label{transport_8c_aa37b5765ca807a54890c516c916e7e9b}} 
+\index{transport.\+c@{transport.\+c}!pid\+\_\+const\+\_\+read@{pid\+\_\+const\+\_\+read}}
+\index{pid\+\_\+const\+\_\+read@{pid\+\_\+const\+\_\+read}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+read()}{pid\_const\_read()}}
+{\footnotesize\ttfamily struct \hyperlink{structpid__const}{pid\+\_\+const} pid\+\_\+const\+\_\+read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns pid\+\_\+const\+\_\+data struct. Checks if the resource is blocked by mutex for writing or it is accessible, waits till pid\+\_\+const\+\_\+data is accessible and returns it. 
+
+\begin{DoxyReturn}{Returns}
+struct \hyperlink{structpid__const}{pid\+\_\+const} -\/ Returns pid\+\_\+const\+\_\+data, can be used to access Kp, Ki, Kd and current values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transport_8c_acaba133d8c5e0cbadc4cfff68feca9fc}\label{transport_8c_acaba133d8c5e0cbadc4cfff68feca9fc}} 
+\index{transport.\+c@{transport.\+c}!pid\+\_\+const\+\_\+transport@{pid\+\_\+const\+\_\+transport}}
+\index{pid\+\_\+const\+\_\+transport@{pid\+\_\+const\+\_\+transport}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+transport()}{pid\_const\_transport()}}
+{\footnotesize\ttfamily void pid\+\_\+const\+\_\+transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles T\+CP client, which receives pid\+\_\+constants from server, and parses the data and stores it in a global struct pid\+\_\+const\+\_\+data. 
+
+\mbox{\Hypertarget{transport_8c_a56e72500cb37fcbc087c3c3125ab7f8e}\label{transport_8c_a56e72500cb37fcbc087c3c3125ab7f8e}} 
+\index{transport.\+c@{transport.\+c}!pid\+\_\+transport@{pid\+\_\+transport}}
+\index{pid\+\_\+transport@{pid\+\_\+transport}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{pid\+\_\+transport()}{pid\_transport()}}
+{\footnotesize\ttfamily void pid\+\_\+transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles U\+DP client, which sends \hyperlink{structpid__terms}{pid\+\_\+terms} received through message queue. 
+
+\mbox{\Hypertarget{transport_8c_a3f717da7b4c254e710bbfd76625b15e4}\label{transport_8c_a3f717da7b4c254e710bbfd76625b15e4}} 
+\index{transport.\+c@{transport.\+c}!receive\+\_\+from\+\_\+queue@{receive\+\_\+from\+\_\+queue}}
+\index{receive\+\_\+from\+\_\+queue@{receive\+\_\+from\+\_\+queue}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{receive\+\_\+from\+\_\+queue()}{receive\_from\_queue()}}
+{\footnotesize\ttfamily struct \hyperlink{structdata__recv}{data\+\_\+recv} receive\+\_\+from\+\_\+queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive data from queue. 
+
+\begin{DoxyReturn}{Returns}
+struct \hyperlink{structdata__recv}{data\+\_\+recv} -\/ struct containing \hyperlink{structpid__terms}{pid\+\_\+terms} and esp\+\_\+err\+\_\+t as members. \hyperlink{structpid__terms}{pid\+\_\+terms} contains pid terms 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transport_8c_a3d23daa4cae5ba60d838c8a2b785462e}\label{transport_8c_a3d23daa4cae5ba60d838c8a2b785462e}} 
+\index{transport.\+c@{transport.\+c}!send\+\_\+to\+\_\+queue@{send\+\_\+to\+\_\+queue}}
+\index{send\+\_\+to\+\_\+queue@{send\+\_\+to\+\_\+queue}!transport.\+c@{transport.\+c}}
+\subsubsection{\texorpdfstring{send\+\_\+to\+\_\+queue()}{send\_to\_queue()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t send\+\_\+to\+\_\+queue (\begin{DoxyParamCaption}\item[{struct \hyperlink{structpid__terms}{pid\+\_\+terms}}]{pid\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Sends pid\+\_\+data struct to message queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid\+\_\+data} & \hyperlink{structpid__terms}{pid\+\_\+terms} struct contains pid values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t E\+S\+P\+\_\+\+OK -\/ if queue init sucessfully, E\+S\+P\+\_\+\+F\+A\+IL -\/ if queue init failed 
+\end{DoxyReturn}

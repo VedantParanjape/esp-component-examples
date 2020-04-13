@@ -1,0 +1,203 @@
+\hypertarget{transport_8h}{}\section{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/include/transport.h File Reference}
+\label{transport_8h}\index{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/include/transport.\+h@{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/include/transport.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}udp\+\_\+handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tcp\+\_\+handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/event\+\_\+groups.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/semphr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+err.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protocol\+\_\+examples\+\_\+common.\+h\char`\"{}}\newline
+Include dependency graph for transport.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transport_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transport_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpid__terms}{pid\+\_\+terms}
+\item 
+struct \hyperlink{structdata__recv}{data\+\_\+recv}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{transport_8h_a81a6fc89c7bc286cb7360b155b1901bf}{M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE}~C\+O\+N\+F\+I\+G\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \hyperlink{transport_8h_a320afeaba56579760e7e3185a3d1fa02}{init\+\_\+queue} (void)
+\begin{DoxyCompactList}\small\item\em Initialises message queue. \end{DoxyCompactList}\item 
+void \hyperlink{transport_8h_a6afdab1f1ab02c6ed620949a7d32ffa4}{init\+\_\+transport} (void)
+\begin{DoxyCompactList}\small\item\em Initialises transport, i.\+e. connect to wifi. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{transport_8h_a3d23daa4cae5ba60d838c8a2b785462e}{send\+\_\+to\+\_\+queue} (struct \hyperlink{structpid__terms}{pid\+\_\+terms} pid\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Sends pid\+\_\+data struct to message queue. \end{DoxyCompactList}\item 
+struct \hyperlink{structdata__recv}{data\+\_\+recv} \hyperlink{transport_8h_a3f717da7b4c254e710bbfd76625b15e4}{receive\+\_\+from\+\_\+queue} (void)
+\begin{DoxyCompactList}\small\item\em Receive data from queue. \end{DoxyCompactList}\item 
+void \hyperlink{transport_8h_a56e72500cb37fcbc087c3c3125ab7f8e}{pid\+\_\+transport} ()
+\begin{DoxyCompactList}\small\item\em Handles U\+DP client, which sends \hyperlink{structpid__terms}{pid\+\_\+terms} received through message queue. \end{DoxyCompactList}\item 
+void \hyperlink{transport_8h_acaba133d8c5e0cbadc4cfff68feca9fc}{pid\+\_\+const\+\_\+transport} ()
+\begin{DoxyCompactList}\small\item\em Handles T\+CP client, which receives pid\+\_\+constants from server, and parses the data and stores it in a global struct pid\+\_\+const\+\_\+data. \end{DoxyCompactList}\item 
+struct \hyperlink{structpid__const}{pid\+\_\+const} \hyperlink{transport_8h_aa37b5765ca807a54890c516c916e7e9b}{pid\+\_\+const\+\_\+read} ()
+\begin{DoxyCompactList}\small\item\em Returns pid\+\_\+const\+\_\+data struct. Checks if the resource is blocked by mutex for writing or it is accessible, waits till pid\+\_\+const\+\_\+data is accessible and returns it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Task\+Handle\+\_\+t \hyperlink{transport_8h_afd5531c3e8b14bff72ce2bb5d9e37afb}{pid\+\_\+transport\+\_\+handle}
+\item 
+Task\+Handle\+\_\+t \hyperlink{transport_8h_af69ee3a89d006744edbe8e3039c6210d}{pid\+\_\+const\+\_\+transport\+\_\+handle}
+\item 
+Queue\+Handle\+\_\+t \hyperlink{transport_8h_a3b6a15c259cc8b4aff104b1ace175fc9}{pid\+\_\+struct\+\_\+queue}
+\item 
+Semaphore\+Handle\+\_\+t \hyperlink{transport_8h_a4e23be7e0ba011a32f7896896aaf186e}{pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex}
+\item 
+struct \hyperlink{structpid__const}{pid\+\_\+const} \hyperlink{transport_8h_a73103b87c83e2ad74f75c8e400f58376}{pid\+\_\+const\+\_\+data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{transport_8h_a81a6fc89c7bc286cb7360b155b1901bf}\label{transport_8h_a81a6fc89c7bc286cb7360b155b1901bf}} 
+\index{transport.\+h@{transport.\+h}!M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE@{M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE}}
+\index{M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE@{M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE}{MESSAGE\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \#define M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE~C\+O\+N\+F\+I\+G\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{transport_8h_a320afeaba56579760e7e3185a3d1fa02}\label{transport_8h_a320afeaba56579760e7e3185a3d1fa02}} 
+\index{transport.\+h@{transport.\+h}!init\+\_\+queue@{init\+\_\+queue}}
+\index{init\+\_\+queue@{init\+\_\+queue}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{init\+\_\+queue()}{init\_queue()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t init\+\_\+queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises message queue. 
+
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t E\+S\+P\+\_\+\+OK -\/ if queue init sucessfully, E\+S\+P\+\_\+\+F\+A\+IL -\/ if queue init failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transport_8h_a6afdab1f1ab02c6ed620949a7d32ffa4}\label{transport_8h_a6afdab1f1ab02c6ed620949a7d32ffa4}} 
+\index{transport.\+h@{transport.\+h}!init\+\_\+transport@{init\+\_\+transport}}
+\index{init\+\_\+transport@{init\+\_\+transport}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{init\+\_\+transport()}{init\_transport()}}
+{\footnotesize\ttfamily void init\+\_\+transport (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises transport, i.\+e. connect to wifi. 
+
+\mbox{\Hypertarget{transport_8h_aa37b5765ca807a54890c516c916e7e9b}\label{transport_8h_aa37b5765ca807a54890c516c916e7e9b}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+const\+\_\+read@{pid\+\_\+const\+\_\+read}}
+\index{pid\+\_\+const\+\_\+read@{pid\+\_\+const\+\_\+read}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+read()}{pid\_const\_read()}}
+{\footnotesize\ttfamily struct \hyperlink{structpid__const}{pid\+\_\+const} pid\+\_\+const\+\_\+read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns pid\+\_\+const\+\_\+data struct. Checks if the resource is blocked by mutex for writing or it is accessible, waits till pid\+\_\+const\+\_\+data is accessible and returns it. 
+
+\begin{DoxyReturn}{Returns}
+struct \hyperlink{structpid__const}{pid\+\_\+const} -\/ Returns pid\+\_\+const\+\_\+data, can be used to access Kp, Ki, Kd and current values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transport_8h_acaba133d8c5e0cbadc4cfff68feca9fc}\label{transport_8h_acaba133d8c5e0cbadc4cfff68feca9fc}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+const\+\_\+transport@{pid\+\_\+const\+\_\+transport}}
+\index{pid\+\_\+const\+\_\+transport@{pid\+\_\+const\+\_\+transport}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+transport()}{pid\_const\_transport()}}
+{\footnotesize\ttfamily void pid\+\_\+const\+\_\+transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles T\+CP client, which receives pid\+\_\+constants from server, and parses the data and stores it in a global struct pid\+\_\+const\+\_\+data. 
+
+\mbox{\Hypertarget{transport_8h_a56e72500cb37fcbc087c3c3125ab7f8e}\label{transport_8h_a56e72500cb37fcbc087c3c3125ab7f8e}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+transport@{pid\+\_\+transport}}
+\index{pid\+\_\+transport@{pid\+\_\+transport}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+transport()}{pid\_transport()}}
+{\footnotesize\ttfamily void pid\+\_\+transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles U\+DP client, which sends \hyperlink{structpid__terms}{pid\+\_\+terms} received through message queue. 
+
+\mbox{\Hypertarget{transport_8h_a3f717da7b4c254e710bbfd76625b15e4}\label{transport_8h_a3f717da7b4c254e710bbfd76625b15e4}} 
+\index{transport.\+h@{transport.\+h}!receive\+\_\+from\+\_\+queue@{receive\+\_\+from\+\_\+queue}}
+\index{receive\+\_\+from\+\_\+queue@{receive\+\_\+from\+\_\+queue}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{receive\+\_\+from\+\_\+queue()}{receive\_from\_queue()}}
+{\footnotesize\ttfamily struct \hyperlink{structdata__recv}{data\+\_\+recv} receive\+\_\+from\+\_\+queue (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive data from queue. 
+
+\begin{DoxyReturn}{Returns}
+struct \hyperlink{structdata__recv}{data\+\_\+recv} -\/ struct containing \hyperlink{structpid__terms}{pid\+\_\+terms} and esp\+\_\+err\+\_\+t as members. \hyperlink{structpid__terms}{pid\+\_\+terms} contains pid terms 
+\end{DoxyReturn}
+\mbox{\Hypertarget{transport_8h_a3d23daa4cae5ba60d838c8a2b785462e}\label{transport_8h_a3d23daa4cae5ba60d838c8a2b785462e}} 
+\index{transport.\+h@{transport.\+h}!send\+\_\+to\+\_\+queue@{send\+\_\+to\+\_\+queue}}
+\index{send\+\_\+to\+\_\+queue@{send\+\_\+to\+\_\+queue}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{send\+\_\+to\+\_\+queue()}{send\_to\_queue()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t send\+\_\+to\+\_\+queue (\begin{DoxyParamCaption}\item[{struct \hyperlink{structpid__terms}{pid\+\_\+terms}}]{pid\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Sends pid\+\_\+data struct to message queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid\+\_\+data} & \hyperlink{structpid__terms}{pid\+\_\+terms} struct contains pid values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t E\+S\+P\+\_\+\+OK -\/ if queue init sucessfully, E\+S\+P\+\_\+\+F\+A\+IL -\/ if queue init failed 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{transport_8h_a73103b87c83e2ad74f75c8e400f58376}\label{transport_8h_a73103b87c83e2ad74f75c8e400f58376}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+const\+\_\+data@{pid\+\_\+const\+\_\+data}}
+\index{pid\+\_\+const\+\_\+data@{pid\+\_\+const\+\_\+data}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+data}{pid\_const\_data}}
+{\footnotesize\ttfamily struct \hyperlink{structpid__const}{pid\+\_\+const} pid\+\_\+const\+\_\+data}
+
+\mbox{\Hypertarget{transport_8h_a4e23be7e0ba011a32f7896896aaf186e}\label{transport_8h_a4e23be7e0ba011a32f7896896aaf186e}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex@{pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex}}
+\index{pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex@{pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex}{pid\_const\_read\_write\_mutex}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t pid\+\_\+const\+\_\+read\+\_\+write\+\_\+mutex}
+
+\mbox{\Hypertarget{transport_8h_af69ee3a89d006744edbe8e3039c6210d}\label{transport_8h_af69ee3a89d006744edbe8e3039c6210d}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+const\+\_\+transport\+\_\+handle@{pid\+\_\+const\+\_\+transport\+\_\+handle}}
+\index{pid\+\_\+const\+\_\+transport\+\_\+handle@{pid\+\_\+const\+\_\+transport\+\_\+handle}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+const\+\_\+transport\+\_\+handle}{pid\_const\_transport\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t pid\+\_\+const\+\_\+transport\+\_\+handle}
+
+\mbox{\Hypertarget{transport_8h_a3b6a15c259cc8b4aff104b1ace175fc9}\label{transport_8h_a3b6a15c259cc8b4aff104b1ace175fc9}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+struct\+\_\+queue@{pid\+\_\+struct\+\_\+queue}}
+\index{pid\+\_\+struct\+\_\+queue@{pid\+\_\+struct\+\_\+queue}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+struct\+\_\+queue}{pid\_struct\_queue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t pid\+\_\+struct\+\_\+queue}
+
+\mbox{\Hypertarget{transport_8h_afd5531c3e8b14bff72ce2bb5d9e37afb}\label{transport_8h_afd5531c3e8b14bff72ce2bb5d9e37afb}} 
+\index{transport.\+h@{transport.\+h}!pid\+\_\+transport\+\_\+handle@{pid\+\_\+transport\+\_\+handle}}
+\index{pid\+\_\+transport\+\_\+handle@{pid\+\_\+transport\+\_\+handle}!transport.\+h@{transport.\+h}}
+\subsubsection{\texorpdfstring{pid\+\_\+transport\+\_\+handle}{pid\_transport\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t pid\+\_\+transport\+\_\+handle}
+

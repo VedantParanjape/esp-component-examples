@@ -1,0 +1,64 @@
+\hypertarget{json__handler_8c}{}\section{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/json\+\_\+handler.c File Reference}
+\label{json__handler_8c}\index{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/json\+\_\+handler.\+c@{/home/vedant/\+Programming/projects/pid-\/tuning-\/gui/esp\+\_\+codes/components/pid\+\_\+plotter/json\+\_\+handler.\+c}}
+{\ttfamily \#include \char`\"{}json\+\_\+handler.\+h\char`\"{}}\newline
+Include dependency graph for json\+\_\+handler.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{json__handler_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{json__handler_8c_a229aa3d7fb017d31499a5e29b78b7f08}{create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json} (float current, float error, float P, float I, float D)
+\begin{DoxyCompactList}\small\item\em Converts P\+ID data to a json string. \end{DoxyCompactList}\item 
+struct \hyperlink{structpid__const}{pid\+\_\+const} \hyperlink{json__handler_8c_a5a00fbe2cfe762fae40bd73932ddb072}{read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json} (const char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reads P\+ID constant data from a json formatted string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{json__handler_8c_a229aa3d7fb017d31499a5e29b78b7f08}\label{json__handler_8c_a229aa3d7fb017d31499a5e29b78b7f08}} 
+\index{json\+\_\+handler.\+c@{json\+\_\+handler.\+c}!create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json@{create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json}}
+\index{create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json@{create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json}!json\+\_\+handler.\+c@{json\+\_\+handler.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json()}{create\_pid\_data\_to\_json()}}
+{\footnotesize\ttfamily char$\ast$ create\+\_\+pid\+\_\+data\+\_\+to\+\_\+json (\begin{DoxyParamCaption}\item[{float}]{current,  }\item[{float}]{error,  }\item[{float}]{P,  }\item[{float}]{I,  }\item[{float}]{D }\end{DoxyParamCaption})}
+
+
+
+Converts P\+ID data to a json string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & current value \\
+\hline
+{\em error} & error value, deviation of current from setpoint \\
+\hline
+{\em P} & Value of Proportional Gain (P) \\
+\hline
+{\em I} & Value of Integral Gain (I) \\
+\hline
+{\em D} & Value of Derivative Gain (D) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ -\/ Json string of the data sent through parameters. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{json__handler_8c_a5a00fbe2cfe762fae40bd73932ddb072}\label{json__handler_8c_a5a00fbe2cfe762fae40bd73932ddb072}} 
+\index{json\+\_\+handler.\+c@{json\+\_\+handler.\+c}!read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json@{read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json}}
+\index{read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json@{read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json}!json\+\_\+handler.\+c@{json\+\_\+handler.\+c}}
+\subsubsection{\texorpdfstring{read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json()}{read\_pid\_data\_from\_json()}}
+{\footnotesize\ttfamily struct \hyperlink{structpid__const}{pid\+\_\+const} read\+\_\+pid\+\_\+data\+\_\+from\+\_\+json (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads P\+ID constant data from a json formatted string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to char array containging the json formatted string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct \hyperlink{structpid__const}{pid\+\_\+const} -\/ Returns a array of P\+ID constants, extracted from the json string 
+\end{DoxyReturn}

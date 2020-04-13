@@ -1,0 +1,105 @@
+
+\begin{DoxyItemize}
+\item E\+S\+P-\/\+I\+DF component for \href{https://github.com/VedantParanjape/pid-tuning-gui}{\tt pid-\/tuning-\/gui}. This transports data, between the plotter and esp device.
+\end{DoxyItemize}
+
+\section*{Requirements}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/VedantParanjape/logger}{\tt logger}
+\end{DoxyItemize}
+
+\section*{Installation}
+
+\begin{DoxyVerb}cd <your_esp_idf_project>
+mkdir components
+cd components
+git clone https://github.com/VedantParanjape/logger   
+git clone https://github.com/VedantParanjape/pid-plotter-component pid_plotter
+\end{DoxyVerb}
+
+
+{\itshape Change C\+Make\+List.\+txt to add the line given below\+:} \begin{DoxyVerb}set(EXTRA_COMPONENT_DIRS <path_to_component_folder>)
+\end{DoxyVerb}
+
+
+\section*{How to use}
+
+
+\begin{DoxyItemize}
+\item Set U\+DP and T\+CP server IP address and port in menuconfig, under component config
+\item Set wifi ssid and password to use.
+\item include \char`\"{}pid\+\_\+plotter.\+h\char`\"{}
+\item {\ttfamily \hyperlink{plotter_8h_acc8c0bc33035955e5c765b474fb33ef1}{plotter()}} must be called in app\+\_\+main
+\item {\ttfamily send\+\_\+to\+\_\+queue(pid\+\_\+data\+\_\+struct)} must be used to push pid\+\_\+data struct to the message queue, by passing such a struct to this function, this data will be sent to client for plotting.
+\item {\ttfamily \hyperlink{transport_8h_aa37b5765ca807a54890c516c916e7e9b}{pid\+\_\+const\+\_\+read()}} returns the \hyperlink{structpid__const}{pid\+\_\+const} struct received from user.
+\end{DoxyItemize}
+
+\section*{Working}
+
+
+\begin{DoxyItemize}
+\item P\+ID Constants (Kp, Ki, Kd, and setpoint) are received by esp32, by connecting to a tcp server.
+\item T\+CP server should send the values as a json string. 
+\begin{DoxyCode}
+\{
+    "Kp" : 1.0,
+    "Ki" : 2.0,
+    "Kd" : 3.0,
+    "SetPoint" : 4.0
+\}
+
+PID constants json format
+\end{DoxyCode}
+
+\item Calculated P\+ID values (P, I, D, current, error) are sent by esp32 through udp, sent to a udp server.
+\item Values are sent as a json string through U\+DP. 
+\begin{DoxyCode}
+\{
+    "P" : 1.0,
+    "I" : 2.0,
+    "D" : 3.0,
+    "current" : 4.0,
+    "error" : 5.0
+\}
+
+PID data json format
+\end{DoxyCode}
+ \section*{Example Code}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{pid__plotter_8h}{pid\_plotter.h}"}
+
+\textcolor{keywordtype}{void} broad()
+\{
+    \textcolor{keyword}{struct }\hyperlink{structpid__terms}{pid\_terms} dt;
+    dt.\hyperlink{structpid__terms_ab4c7f8712a43d4fe1b8932783f286c22}{current} = 1.00;
+    dt.error = 2.00;
+    dt.P = 3.00;
+    dt.I = 4.00;
+    dt.D = 5.00;
+
+    \textcolor{keywordflow}{while}(1)
+    \{
+        esp\_err\_t err = \hyperlink{transport_8h_a3d23daa4cae5ba60d838c8a2b785462e}{send\_to\_queue}(dt);
+        err = \hyperlink{transport_8h_a3d23daa4cae5ba60d838c8a2b785462e}{send\_to\_queue}(dt);
+        logD(\textcolor{stringliteral}{"main"}, \textcolor{stringliteral}{"%f"}, \hyperlink{transport_8h_aa37b5765ca807a54890c516c916e7e9b}{pid\_const\_read}().setpoint);
+        vTaskDelay(10);
+    \}
+\}
+
+\textcolor{keywordtype}{void} app\_main(\textcolor{keywordtype}{void})
+\{
+    xTaskCreate(broad, \textcolor{stringliteral}{"send"}, 4096, NULL, 1, NULL);
+    \hyperlink{plotter_8h_acc8c0bc33035955e5c765b474fb33ef1}{plotter}();
+\}
+\end{DoxyCode}
+ \section*{Detailed documentation}
+
+
+\begin{DoxyItemize}
+\item \href{https://vedantparanjape.github.io/pid-plotter-component/}{\tt https\+://vedantparanjape.\+github.\+io/pid-\/plotter-\/component/} 
+\end{DoxyItemize}

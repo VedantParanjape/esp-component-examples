@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structdata__recv" kind="struct" language="C++" prot="public">
+    <compoundname>data_recv</compoundname>
+    <includes refid="transport_8h" local="no">transport.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdata__recv_1af60b2e3d44df4ef57e1998ff55783920" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structpid__terms" kindref="compound">pid_terms</ref></type>
+        <definition>struct pid_terms data_recv::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="29" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdata__recv_1a96d1938d8172e27035f655727f675273" prot="public" static="no" mutable="no">
+        <type>esp_err_t</type>
+        <definition>esp_err_t data_recv::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="35" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>data_recv</label>
+        <link refid="structdata__recv"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pid_terms</label>
+        <link refid="structpid__terms"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="33" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="32" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structdata__recv_1af60b2e3d44df4ef57e1998ff55783920" prot="public" virt="non-virtual"><scope>data_recv</scope><name>data</name></member>
+      <member refid="structdata__recv_1a96d1938d8172e27035f655727f675273" prot="public" virt="non-virtual"><scope>data_recv</scope><name>err</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

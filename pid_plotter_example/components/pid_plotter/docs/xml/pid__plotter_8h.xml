@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pid__plotter_8h" kind="file" language="C++">
+    <compoundname>pid_plotter.h</compoundname>
+    <includes refid="json__handler_8h" local="yes">json_handler.h</includes>
+    <includes refid="udp__handler_8h" local="yes">udp_handler.h</includes>
+    <includes refid="tcp__handler_8h" local="yes">tcp_handler.h</includes>
+    <includes refid="transport_8h" local="yes">transport.h</includes>
+    <includes refid="plotter_8h" local="yes">plotter.h</includes>
+    <incdepgraph>
+      <node id="17">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="24">
+        <label>nvs_flash.h</label>
+      </node>
+      <node id="26">
+        <label>protocol_examples_common.h</label>
+      </node>
+      <node id="34">
+        <label>stdlib.h</label>
+      </node>
+      <node id="32">
+        <label>tcp_handler.h</label>
+        <link refid="tcp__handler_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>esp_system.h</label>
+      </node>
+      <node id="37">
+        <label>esp_err.h</label>
+      </node>
+      <node id="25">
+        <label>esp_netif.h</label>
+      </node>
+      <node id="35">
+        <label>freertos/queue.h</label>
+      </node>
+      <node id="21">
+        <label>esp_wifi.h</label>
+      </node>
+      <node id="12">
+        <label>cJSON.h</label>
+      </node>
+      <node id="31">
+        <label>lwip/netdb.h</label>
+      </node>
+      <node id="15">
+        <label>string.h</label>
+      </node>
+      <node id="23">
+        <label>esp_log.h</label>
+      </node>
+      <node id="16">
+        <label>sys/param.h</label>
+      </node>
+      <node id="10">
+        <label>/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/pid_plotter.h</label>
+        <link refid="pid__plotter_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>lwip/sockets.h</label>
+      </node>
+      <node id="30">
+        <label>lwip/sys.h</label>
+      </node>
+      <node id="36">
+        <label>freertos/semphr.h</label>
+      </node>
+      <node id="28">
+        <label>lwip/err.h</label>
+      </node>
+      <node id="22">
+        <label>esp_event.h</label>
+      </node>
+      <node id="18">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="11">
+        <label>json_handler.h</label>
+        <link refid="json__handler_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>udp_handler.h</label>
+        <link refid="udp__handler_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>plotter.h</label>
+        <link refid="plotter_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+      <node id="19">
+        <label>freertos/event_groups.h</label>
+      </node>
+      <node id="27">
+        <label>logger.h</label>
+      </node>
+      <node id="33">
+        <label>transport.h</label>
+        <link refid="transport_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PID_PLOTTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PID_PLOTTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="json__handler_8h" kindref="compound">json_handler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="udp__handler_8h" kindref="compound">udp_handler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tcp__handler_8h" kindref="compound">tcp_handler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="transport_8h" kindref="compound">transport.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="plotter_8h" kindref="compound">plotter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight></codeline>
+    </programlisting>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/pid_plotter.h"/>
+  </compounddef>
+</doxygen>

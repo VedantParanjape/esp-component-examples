@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structpid__terms" kind="struct" language="C++" prot="public">
+    <compoundname>pid_terms</compoundname>
+    <includes refid="transport_8h" local="no">transport.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpid__terms_1ab4c7f8712a43d4fe1b8932783f286c22" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_terms::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="25" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__terms_1a8073092d43a680432fa0f7784a7aef29" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_terms::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="26" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__terms_1af930983320efcf1d96d3b7cb85fee908" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_terms::P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="27" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__terms_1af72ae69eaa9faeab7273dcbd847fdee9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_terms::I</definition>
+        <argsstring></argsstring>
+        <name>I</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="28" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpid__terms_1a864b7035292cd484f321d0f52a5a68d8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pid_terms::D</definition>
+        <argsstring></argsstring>
+        <name>D</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="29" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" line="24" column="1" bodyfile="/home/vedant/Programming/projects/pid-tuning-gui/esp_codes/components/pid_plotter/include/transport.h" bodystart="23" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structpid__terms_1ab4c7f8712a43d4fe1b8932783f286c22" prot="public" virt="non-virtual"><scope>pid_terms</scope><name>current</name></member>
+      <member refid="structpid__terms_1a864b7035292cd484f321d0f52a5a68d8" prot="public" virt="non-virtual"><scope>pid_terms</scope><name>D</name></member>
+      <member refid="structpid__terms_1a8073092d43a680432fa0f7784a7aef29" prot="public" virt="non-virtual"><scope>pid_terms</scope><name>error</name></member>
+      <member refid="structpid__terms_1af72ae69eaa9faeab7273dcbd847fdee9" prot="public" virt="non-virtual"><scope>pid_terms</scope><name>I</name></member>
+      <member refid="structpid__terms_1af930983320efcf1d96d3b7cb85fee908" prot="public" virt="non-virtual"><scope>pid_terms</scope><name>P</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

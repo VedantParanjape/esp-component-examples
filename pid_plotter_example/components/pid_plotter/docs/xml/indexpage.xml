@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>PID-Plotter</title>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>ESP-IDF component for <ulink url="https://github.com/VedantParanjape/pid-tuning-gui">pid-tuning-gui</ulink>. This transports data, between the plotter and esp device.</para></listitem></itemizedlist>
+</para><para><heading level="1">Requirements</heading>
+</para><para><itemizedlist>
+<listitem><para><ulink url="https://github.com/VedantParanjape/logger">logger</ulink></para></listitem></itemizedlist>
+</para><para><heading level="1">Installation</heading>
+</para><para><verbatim>cd &lt;your_esp_idf_project&gt;
+mkdir components
+cd components
+git clone https://github.com/VedantParanjape/logger   
+git clone https://github.com/VedantParanjape/pid-plotter-component pid_plotter
+</verbatim></para><para><emphasis>Change CMakeList.txt to add the line given below:</emphasis> <verbatim>set(EXTRA_COMPONENT_DIRS &lt;path_to_component_folder&gt;)
+</verbatim></para><para><heading level="1">How to use</heading>
+</para><para><itemizedlist>
+<listitem><para>Set UDP and TCP server IP address and port in menuconfig, under component config</para></listitem><listitem><para>Set wifi ssid and password to use.</para></listitem><listitem><para>include &quot;pid_plotter.h&quot;</para></listitem><listitem><para><computeroutput><ref refid="plotter_8h_1acc8c0bc33035955e5c765b474fb33ef1" kindref="member">plotter()</ref></computeroutput> must be called in app_main</para></listitem><listitem><para><computeroutput>send_to_queue(pid_data_struct)</computeroutput> must be used to push pid_data struct to the message queue, by passing such a struct to this function, this data will be sent to client for plotting.</para></listitem><listitem><para><computeroutput><ref refid="transport_8h_1aa37b5765ca807a54890c516c916e7e9b" kindref="member">pid_const_read()</ref></computeroutput> returns the <ref refid="structpid__const" kindref="compound">pid_const</ref> struct received from user.</para></listitem></itemizedlist>
+</para><para><heading level="1">Working</heading>
+</para><para><itemizedlist>
+<listitem><para>PID Constants (Kp, Ki, Kd, and setpoint) are received by esp32, by connecting to a tcp server.</para></listitem><listitem><para>TCP server should send the values as a json string. <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Kp&quot;<sp/>:<sp/>1.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Ki&quot;<sp/>:<sp/>2.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Kd&quot;<sp/>:<sp/>3.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;SetPoint&quot;<sp/>:<sp/>4.0</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">PID<sp/>constants<sp/>json<sp/>format</highlight></codeline>
+</programlisting></para></listitem><listitem><para>Calculated PID values (P, I, D, current, error) are sent by esp32 through udp, sent to a udp server.</para></listitem><listitem><para>Values are sent as a json string through UDP. <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;P&quot;<sp/>:<sp/>1.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;I&quot;<sp/>:<sp/>2.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;D&quot;<sp/>:<sp/>3.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;current&quot;<sp/>:<sp/>4.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;error&quot;<sp/>:<sp/>5.0</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">PID<sp/>data<sp/>json<sp/>format</highlight></codeline>
+</programlisting> <heading level="1">Example Code</heading>
+</para></listitem></itemizedlist>
+</para><para><programlisting><codeline><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pid__plotter_8h" kindref="compound">pid_plotter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>broad()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structpid__terms" kindref="compound">pid_terms</ref><sp/>dt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.<ref refid="structpid__terms_1ab4c7f8712a43d4fe1b8932783f286c22" kindref="member">current</ref><sp/>=<sp/>1.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.error<sp/>=<sp/>2.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.P<sp/>=<sp/>3.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.I<sp/>=<sp/>4.00;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dt.D<sp/>=<sp/>5.00;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>esp_err_t<sp/>err<sp/>=<sp/><ref refid="transport_8h_1a3d23daa4cae5ba60d838c8a2b785462e" kindref="member">send_to_queue</ref>(dt);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/><ref refid="transport_8h_1a3d23daa4cae5ba60d838c8a2b785462e" kindref="member">send_to_queue</ref>(dt);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logD(</highlight><highlight class="stringliteral">&quot;main&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;%f&quot;</highlight><highlight class="normal">,<sp/><ref refid="transport_8h_1aa37b5765ca807a54890c516c916e7e9b" kindref="member">pid_const_read</ref>().setpoint);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vTaskDelay(10);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>app_main(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreate(broad,<sp/></highlight><highlight class="stringliteral">&quot;send&quot;</highlight><highlight class="normal">,<sp/>4096,<sp/>NULL,<sp/>1,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="plotter_8h_1acc8c0bc33035955e5c765b474fb33ef1" kindref="member">plotter</ref>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> <heading level="1">Detailed documentation</heading>
+</para><para><itemizedlist>
+<listitem><para><ulink url="https://vedantparanjape.github.io/pid-plotter-component/">https://vedantparanjape.github.io/pid-plotter-component/</ulink> </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>
