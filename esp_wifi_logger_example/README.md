@@ -10,7 +10,7 @@ idf.py menuconfig
 idf.py flash
 ```
 
-![](https://imgur.com/a/jscJe4g)
+![](https://raw.githubusercontent.com/VedantParanjape/esp-component-examples/master/assets/esp_wifi_logger_edited.gif)
 
 ## Usage
 
