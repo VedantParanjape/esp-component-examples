@@ -10,7 +10,7 @@ idf.py menuconfig
 idf.py flash
 ```
 
-![](https://drive.google.com/file/d/1_rdahzCa869rZb_BYeKMWFEH_x3WUriE/view?usp=sharing)
+![](https://imgur.com/a/73ituC0)
 
 ## Usage
 
